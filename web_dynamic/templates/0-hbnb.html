@@ -9,6 +9,16 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css">
     <link rel="icon" href="../static/images/icon.png" />
     <title>HBnB</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+		document.addEventListener('DOMContentLoaded', (event) => {
+            const cache_id = "{{ cache_id }}";
+            const linkTags = document.getElementsByTagName("link");
+            linkTags.each(() => {
+        		var href = $(this).attr("href");
+        		$(this).attr("href", href + "?cache_id=" + cache_id);
+    		});
+        });
+	</script>    
   </head>
   <body>
     <header>
